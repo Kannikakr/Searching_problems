@@ -26,7 +26,18 @@ It also specifies that we can use standard functions and objects (like those for
 4. It then calls the search function with the array, the number of elements, and the specific number to find.
 5. Based on the result returned by the search function, the program displays a message indicating whether the element was found and, if so, its position in the array.
 
+### 1. Binary_Search 
+ 
+#### Search Process:
 
+1. The algorithm repeatedly divides the search interval in half.
+2. Calculate the middle index of the current search interval.
+3. Compare the middle element with the target value:
+        * If the middle element is equal to the target value, the search is successful, and the index of the middle element is returned.
+        * If the middle element is less than the target value, the target must be in the right half of the array. Therefore, update the lower boundary of the search interval to just above the middle index.
+        * If the middle element is greater than the target value, the target must be in the left half of the array. Therefore, update the upper boundary of the search interval to just below the middle index.
 
+#### Termination:
 
+The process continues until the lower boundary exceeds the upper boundary, which means the target value is not in the array, and the search returns -1.
 
