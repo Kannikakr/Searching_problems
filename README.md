@@ -41,3 +41,11 @@ It also specifies that we can use standard functions and objects (like those for
 
 The process continues until the lower boundary exceeds the upper boundary, which means the target value is not in the array, and the search returns -1.
 
+#### Example Execution:
+
+1. In the provided code, the array is {3, 4, 5, 6, 7, 8, 9} and the target value is 4.
+2. Initially, the search interval is the entire array.
+3. The middle element is compared to 4:
+        * If the middle element is not 4, the search interval is adjusted according to the comparison.
+        * In this case, the search finds 4 at index 1.
+4. The result is then printed, indicating the position of the target element if found, or stating that the element was not found if the search was unsuccessful.
