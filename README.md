@@ -26,7 +26,7 @@ It also specifies that we can use standard functions and objects (like those for
 4. It then calls the search function with the array, the number of elements, and the specific number to find.
 5. Based on the result returned by the search function, the program displays a message indicating whether the element was found and, if so, its position in the array.
 
-### 1. Binary_Search 
+### 2. Binary_Search 
  
 #### Search Process:
 
@@ -49,3 +49,39 @@ The process continues until the lower boundary exceeds the upper boundary, which
         * If the middle element is not 4, the search interval is adjusted according to the comparison.
         * In this case, the search finds 4 at index 1.
 4. The result is then printed, indicating the position of the target element if found, or stating that the element was not found if the search was unsuccessful.
+
+# 3. First ocuurance in an array by using binary search
+
+##### Function: firstocc
+1. Parameters: 
+        * arr[]: The array in which we want to find the first occurrence of key.
+        * n: The size of the array.
+        * key: The element we are searching for.
+
+2. Binary Search Initialization:
+
+        * The search begins with s (start) set to 0 (the first index) and e (end) set to n-1 (the last index).
+        *mid is calculated as the middle index of the current search range.
+
+3. Binary Search Process:
+
+        * Key Match: If the element at the middle index mid matches key, then mid is stored as a potential answer (ans). However, instead of stopping the search, the algorithm continues searching in the left half of the array (e = mid-1) to find any earlier occurrences of key.
+        * Key Greater: If key is greater than the element at mid, it implies that key can only be present in the right half of the array, so the start of the search range is updated to mid + 1.
+        * Key Smaller: If key is smaller than the element at mid, the search continues in the left half of the array (e = mid-1).
+
+4. Loop and Termination:
+
+        * The loop continues until s exceeds e, meaning the search range is exhausted.
+        * The function then returns the index stored in ans, which corresponds to the first occurrence of key.
+
+##### Main Function:
+
+1. Array Initialization:
+An array of size 100 is declared and initialized with some sorted integers, including repeated occurrences of the number 2.
+
+2. Finding the First Occurrence:
+        * The function firstocc is called with the array, its size (9), and the key (2).
+        * The result, which is the index of the first occurrence of 2, is stored in the variable ans.
+
+##### Output:
+The program then prints the index of the first occurrence of 2 and the value at that index.
