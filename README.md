@@ -85,3 +85,22 @@ An array of size 100 is declared and initialized with some sorted integers, incl
 
 ##### Output:
 The program then prints the index of the first occurrence of 2 and the value at that index.
+
+# 4. Right most occurance in an array using binary search
+
+1. Initialization: The program starts by setting up variables to define the range of the array that it will search. Initially, it considers the entire array, from the first element to the last.
+
+2. Binary Search: The program uses a technique called "binary search," which is particularly efficient for sorted arrays. The idea is to repeatedly divide the array into two halves to zero in on the location of the key.
+
+        * Middle Element Check: The program examines the middle element of the current range.
+        * If the middle element is equal to the key, it records this position as a potential first occurrence. Then, it shifts focus to the left half of the array (to see if the key appears earlier in the array).
+        * If the key is smaller than the middle element, the program narrows its search to the left half (as all elements on the right will be larger).
+        * If the key is larger, the search continues in the right half (as all elements on the left will be smaller).
+        
+3. Termination: The search continues until the range of the array has been fully explored (when the start index surpasses the end index). At this point, the recorded position of the first occurrence of the key is returned.
+
+##### Output:
+Finally, the program prints the index where the key first appears in the array and the value at that position.
+
+##### Example:
+Consider an array like [1, 2, 2, 2, 3, 4, 5, 6, 7]. If the key is 2, the program will identify that 2 first occurs at index 1 and will output that information.
