@@ -104,3 +104,28 @@ Finally, the program prints the index where the key first appears in the array a
 
 ##### Example:
 Consider an array like [1, 2, 2, 2, 3, 4, 5, 6, 7]. If the key is 2, the program will identify that 2 first occurs at index 1 and will output that information.
+
+# 5. Peak_element_in_moumtain_array
+
+1. Initial Setup:
+
+        * You start with two pointers: s (start) and e (end), which represent the beginning and end of the array.
+        * The middle of the array is calculated using the formula mid = s + (e - s) / 2. This gives the index of the midpoint of the current segment of the array you are examining.
+
+2. Iterative Search:
+
+        * The core of the method is a loop that continues until the s and e pointers converge, meaning they point to the same element.
+        * During each iteration:
+                * You compare the middle element arr[mid] with its next neighbor arr[mid+1].
+                * If arr[mid] is less than arr[mid+1], it suggests that the peak is in the right half of the array. Hence, you move the start pointer s to mid + 1.
+                * If arr[mid] is greater than or equal to arr[mid+1], it suggests that the peak is either at mid or in the left half of the array. So, you move the end pointer e to mid.
+
+3. Convergence:
+
+        * The loop continues narrowing down the range between s and e until both pointers meet at the peak element.
+        * At the end of the loop, both s and e point to the same index, which is the index of the peak element.
+
+##### Output:
+
+Finally, the function returns the index of the peak element.
+The main program prints out the index and the value of the peak element.
